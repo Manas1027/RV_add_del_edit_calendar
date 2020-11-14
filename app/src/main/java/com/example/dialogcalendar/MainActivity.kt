@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 R.id.edit -> {
                     val editDialog = LayoutInflater.from(this).inflate(R.layout.dialog_custom_add, null)
                     val dialog = AlertDialog.Builder(this).setView(editDialog).show()
-                    //editDialog.userTitle.text = myAdapter.models[index].title.toString()
-                    //editDialog.userDescription.text = myAdapter.models[index].description.toString()
+                    editDialog.userTitle.setText("${myAdapter.models[index].title}")
+                    editDialog.userDescription.setText("${myAdapter.models[index].description}")
 
                     editDialog.btnPositive.setOnClickListener {
                         myAdapter.editItem(index, editDialog.userTitle.text.toString(), editDialog.userDescription.text.toString())
